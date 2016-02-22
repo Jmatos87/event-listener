@@ -1,22 +1,81 @@
 // GO!
 
+//Part 1
+var navButton = document.querySelector('button')
+var navBar = document.querySelector('.nav-menu')
+var navVis = true
 
 
-// BONUS 
-var input = document.querySelector("#add-guest-bonus input")
-var guestList = document.querySelector("#add-guest-bonus ul")
 
-var addGuest = function(e) {
-	console.log(e.keyCode)
-	if (e.keyCode === 13) {
-		var newGuestItem = document.createElement('li')
-		newGuestItem.innerHTML = e.target.value + "<button>X</button>"
-		newGuestItem.classList.add('guest')
-		newGuestItem.querySelector('button').addEventListener('click',function() {
-			guestList.removeChild(newGuestItem)
-		})
-		guestList.appendChild(newGuestItem)
-		e.target.value = ''
+var why = function (){
+
+	if(navVis){
+		navBar.style.opacity = 0
+		navButton.innerHTML = 'show nav'
+		navVis = false
 	}
+	else {
+		navBar.style.opacity = 1
+		navButton.innerHTML = 'hide nav'
+		navVis = true
+	}
+
 }
-input.addEventListener('keypress',addGuest)
+
+navButton.addEventListener('click',why)
+
+//{Part 2}
+
+
+
+var inputBox = document.querySelector('.answer-box input')
+var ulList = document.querySelector('.guest-list')
+
+var addStuff = function (keyEvent){
+	var inputEl = keyEvent.srcElement
+
+	  if (keyEvent.keyCode === 13) {
+      var userInput = inputEl.value
+      var newLi =document.createElement('li')
+      newLi.innerHTML=userInput
+      ulList.appendChild(newLi)
+      inputEl.value = ''
+ }
+
+
+}
+
+
+inputBox.addEventListener('keydown',addStuff)
+// BONUS 
+
+
+var bonusInputBox = document.querySelector('#answerBox input')
+var bonusUlList = document.querySelector('#theList')
+
+
+var hi = function () {
+  this.parentNode.parentNode.removeChild(this.parentNode)
+
+
+}
+
+var bonusAddStuff = function (keyEvent){
+	var inputEl = keyEvent.srcElement
+
+	  if (keyEvent.keyCode === 13) {
+      var userInput = inputEl.value
+      var newLi =document.createElement('li')
+      var newButton = document.createElement('button')
+      		newButton.innerHTML = 'X'
+      		
+      		newLi.innerHTML=userInput
+      		bonusUlList.appendChild(newLi)
+      		newLi.appendChild(newButton)
+      		inputEl.value = ''
+ 	  }		newButton.addEventListener("click",hi)
+
+
+}
+
+bonusInputBox.addEventListener('keydown',bonusAddStuff)

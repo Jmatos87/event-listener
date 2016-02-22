@@ -118,12 +118,12 @@ hr.q-divider{
 #add-guest .answer-box {
   text-align: center;
 }
-#add-guest input {
+#guest input {
   display: block;
   margin: 15px auto;
 }
 
-#add-guest ul {
+.answer-box ul {
   border: 3px solid #555;
   max-width: 400px;
   margin: 0 auto;
@@ -131,28 +131,28 @@ hr.q-divider{
   padding: 0;
 }
 
-#add-guest .guest {
+.guest-list li {
   list-style: none;
   margin: 0;
   padding: 4px;
   text-align: left;
 }
 
-#add-guest .guest:nth-child(even) {
+.guest-list :nth-child(even) {
   background: tomato;
 }
 
 /*TASK 3*/
 
-#add-guest-bonus .answer-box {
+.answer-box {
   text-align: center;
 }
-#add-guest-bonus input {
+#answerBox input {
   display: block;
   margin: 15px auto;
 }
 
-#add-guest-bonus ul {
+#answerBox ul {
   border: 3px solid #555;
   max-width: 400px;
   margin: 0 auto;
@@ -160,14 +160,14 @@ hr.q-divider{
   padding: 0;
 }
 
-#add-guest-bonus .guest {
+#theList li {
   list-style: none;
   margin: 0;
   padding: 4px;
   text-align: left;
 }
 
-#add-guest-bonus .guest:nth-child(even) {
+#theList li:nth-child(even) {
   background: tomato;
 }
 
